@@ -1,0 +1,961 @@
+<html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link  href="C:\Users\pc\Desktop\InvestGroup\inv\indextyle.css" rel="stylesheet" type="text/css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+
+  <link rel="php" href="C:\Users\pc\Desktop\InvestGroup\inv\process.php" type="php">
+</head>
+<style>
+  
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, rgb(72, 85, 99), rgb(41, 50, 60));
+ 
+}
+
+
+
+    @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+section{
+padding: 50px;
+}
+/* #region Scrollbar */
+::-webkit-scrollbar{
+width: 0;
+}
+#scrollPath{
+position: fixed;
+top: 0;
+right: 0;
+width: 10px;
+height: 100%;
+background: rgba(255,255,255,0.05);
+
+}
+#progressbar{
+position: fixed;
+top: 0;
+right: 0;
+width: 10px;
+height: 100%;
+background:linear-gradient(to top, #008aff,#00ffe7);
+animation: animate 5s linear infinite;
+}
+@keyframes animate{
+0%,100%{
+filter: hue-rotate(0deg);
+}
+50%{
+filter: hue-rotate(360deg);
+}
+}
+#progressbar::before{
+content:'';
+position:absolute;
+top: 0;
+left: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background:linear-gradient(to top, #008aff,#00ffe7);
+filter:blur(10px);
+}
+#progressbar::after{
+content:'';
+position:absolute;
+top: 0;
+left: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background:linear-gradient(to top, #008aff,#00ffe7);
+filter:blur(30px);
+}
+/* #endregion */
+
+
+/* #region Scrollbar2 */
+/*scrollbar-2*/
+::-webkit-scrollbar{
+width: 0;
+}
+#scrollPath2{
+position: fixed;
+top: 0;
+left: 0;
+width: 10px;
+height: 100%;
+background: rgba(255,255,255,0.05);
+
+}
+#progressbar2{
+position: fixed;
+top: 0;
+left: 0;
+width: 10px;
+height: 100%;
+background:linear-gradient(to top, #008aff,#00ffe7);
+animation: animate 5s linear infinite;
+}
+@keyframes animate{
+0%,100%{
+filter: hue-rotate(0deg);
+}
+50%{
+filter: hue-rotate(360deg);
+}
+}
+#progressbar2::before{
+content:'';
+position:absolute;
+top: 0;
+right: 0;
+width: 100%;
+height: 100%;
+background:linear-gradient(to top, #008aff,#00ffe7);
+filter:blur(10px);
+}
+#progressbar2::after{
+content:'';
+position:absolute;
+top: 0;
+right: 0;
+width: 100%;
+height: 100%;
+background:linear-gradient(to top, #008aff,#00ffe7);
+filter:blur(30px);
+}
+/* #endregion */
+
+
+/* #region Box */
+.box{
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin-bottom: 50px;
+  display: inline-block;
+  background:#060c21;
+  justify-content: center;
+  align-items:center;
+  margin-top: 100px;
+  margin-left: 150px;
+  transition: 0.5s;
+  border-top-right-radius: 20%;
+  border-top-left-radius:20%;
+}
+
+.box .imgBX{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-top-right-radius: 20%;
+  border-top-left-radius:20%;
+}
+.box .imgBX img{
+  max-width: 100%;
+  opacity: 0.7;
+  transition: 0.5s;
+  border-top-right-radius: 20%;
+  border-top-left-radius:20%;
+}
+
+.box:before{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background:#fff;
+  z-index: -1;
+  border-top-right-radius: 20%;
+  border-top-left-radius:20%;
+}
+.box:after{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background:#fff;
+  z-index: -2;
+  filter: blur(40px);
+  border-top-right-radius: 20%;
+  border-top-left-radius:20%;
+}
+.box:before,.box:after{
+  background:linear-gradient(235deg,#89ff00,#043eeb,#e61818);   
+}
+
+.box .content{
+position: absolute;
+bottom: 0;
+left: 10px;
+right:10px;
+bottom: 10px;
+height: 110px;
+background:rgba(0,0,0,0.4);
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+opacity: 1;
+transition: 0.5s;
+}
+.box .content h2{
+font-size: 20px;
+color: #fff;
+font-weight: 500;
+letter-spacing: 1px;
+}
+.box .content h2 span{
+font-size:14px;
+color: #fff;
+font-weight:200;
+letter-spacing: 2px;
+
+}
+@media screen and (max-width: 600px) {
+.box {
+  margin-left: 45px;
+}
+}
+
+/* #endregion */
+
+
+/* #region info */
+.info{
+width: auto;
+height: auto;
+color: black;
+background: rgb(72, 85, 99);
+margin: 20px;
+border-radius: 30px;
+padding: 10px;
+transition: 0.6s;
+border: 2px solid rgb(255, 255, 255);
+box-shadow: 17px 17px 5px rgb(49, 47, 47);
+}
+
+.info h2{
+margin-left:2px;
+margin-top: 0;
+color:rgb(255, 255, 255);
+font-size:35px;
+}
+.info p{
+margin-top: 10px;
+margin-left: 40px;
+font-size:17px;
+}
+/* #endregion */
+
+
+
+/* #region nav2 */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+html,
+body {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Quicksand", sans-serif  ;
+font-size: 62.5%;
+font-size: 10px;
+}
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+
+/* Navbar section */
+
+.nav {
+width: 100%;
+height: 65px;
+position: fixed;
+line-height: 65px;
+text-align: center;
+}
+
+.nav div.logo {
+float: left;
+width: auto;
+height: auto;
+padding-left: 3rem;
+margin-top: -10px;
+}
+
+.nav div.logo a {
+text-decoration: none;
+color: #fff;
+font-size: 2.5rem;
+}
+
+.nav div.logo a:hover {
+    color: rgb(9, 255, 0);
+}
+
+.nav div.main_list {
+height: 65px;
+float: right;
+}
+
+.nav div.main_list ul {
+width: 100%;
+height: 65px;
+display: flex;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.nav div.main_list ul li {
+width: auto;
+height: 65px;
+padding: 0;
+padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+text-decoration: none;
+color: #fff;
+line-height: 65px;
+font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+color: #5100e6;
+}
+
+
+/* Home section */
+
+.home {
+width: 100%;
+height: 50vh;
+background-image: url(logo2.jpg);
+background-position: center;
+  background-size:cover;
+
+}
+
+.navTrigger {
+display: none;
+}
+
+.nav {
+padding-top: 20px;
+padding-bottom: 20px;
+-webkit-transition: all 0.4s ease;
+transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+.container {
+    margin: 0;
+}
+}
+
+@media screen and (max-width:768px) {
+.navTrigger {
+    display: block;
+}
+.nav div.logo {
+    margin-left: 15px;
+}
+.nav div.main_list {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    opacity: 1;
+    
+}
+.nav div.show_list {
+    height: auto;
+    display: none;
+    
+}
+.nav div.main_list ul {
+    flex-direction: column;
+    width: 100%;
+    height: 40vh;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color:rgb(107, 120, 133);
+    /*same background color of navbar*/
+    background-position: center top;
+    position:static;
+}
+.nav div.main_list ul li {
+    width: 100%;
+    text-align: right;
+}
+.nav div.main_list ul li a {
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    padding: 20px;
+}
+.nav div.media_button {
+    display: block;
+}
+.nav div.main_list ul li a:hover {
+    color:rgb(9, 255, 0)
+    }
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+cursor: pointer;
+width: 30px;
+height: 25px;
+margin: auto;
+position: absolute;
+right: 30px;
+top: 0;
+bottom: 0;
+}
+
+.navTrigger i {
+background-color: rgb(9, 255, 0);
+border-radius: 2px;
+content: '';
+display: block;
+width: 100%;
+height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+-webkit-animation: outT 0.8s backwards;
+animation: outT 0.8s backwards;
+-webkit-animation-direction: reverse;
+animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+margin: 5px 0;
+-webkit-animation: outM 0.8s backwards;
+animation: outM 0.8s backwards;
+-webkit-animation-direction: reverse;
+animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+-webkit-animation: outBtm 0.8s backwards;
+animation: outBtm 0.8s backwards;
+-webkit-animation-direction: reverse;
+animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+-webkit-animation: inT 0.8s forwards;
+animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+-webkit-animation: inM 0.8s forwards;
+animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+-webkit-animation: inBtm 0.8s forwards;
+animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+50% {
+    -webkit-transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(45deg);
+}
+}
+
+@keyframes inM {
+50% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(45deg);
+}
+}
+
+@-webkit-keyframes outM {
+50% {
+    -webkit-transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(45deg);
+}
+}
+
+@keyframes outM {
+50% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(45deg);
+}
+}
+
+@-webkit-keyframes inT {
+0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+}
+50% {
+    -webkit-transform: translateY(9px) rotate(0deg);
+}
+100% {
+    -webkit-transform: translateY(9px) rotate(135deg);
+}
+}
+
+@keyframes inT {
+0% {
+    transform: translateY(0px) rotate(0deg);
+}
+50% {
+    transform: translateY(9px) rotate(0deg);
+}
+100% {
+    transform: translateY(9px) rotate(135deg);
+}
+}
+
+@-webkit-keyframes outT {
+0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+}
+50% {
+    -webkit-transform: translateY(9px) rotate(0deg);
+}
+100% {
+    -webkit-transform: translateY(9px) rotate(135deg);
+}
+}
+
+@keyframes outT {
+0% {
+    transform: translateY(0px) rotate(0deg);
+}
+50% {
+    transform: translateY(9px) rotate(0deg);
+}
+100% {
+    transform: translateY(9px) rotate(135deg);
+}
+}
+
+@-webkit-keyframes inBtm {
+0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+}
+50% {
+    -webkit-transform: translateY(-9px) rotate(0deg);
+}
+100% {
+    -webkit-transform: translateY(-9px) rotate(135deg);
+}
+}
+
+@keyframes inBtm {
+0% {
+    transform: translateY(0px) rotate(0deg);
+}
+50% {
+    transform: translateY(-9px) rotate(0deg);
+}
+100% {
+    transform: translateY(-9px) rotate(135deg);
+}
+}
+
+@-webkit-keyframes outBtm {
+0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+}
+50% {
+    -webkit-transform: translateY(-9px) rotate(0deg);
+}
+100% {
+    -webkit-transform: translateY(-9px) rotate(135deg);
+}
+}
+
+@keyframes outBtm {
+0% {
+    transform: translateY(0px) rotate(0deg);
+}
+50% {
+    transform: translateY(-9px) rotate(0deg);
+}
+100% {
+    transform: translateY(-9px) rotate(135deg);
+}
+}
+
+.affix {
+padding: 0;
+background-color: rgb(107, 120, 133);  
+}
+.myH2 {
+text-align:center;
+font-size: 4rem;
+}
+.myP {
+text-align: justify;
+padding-left:15%;
+padding-right:15%;
+font-size: 20px;
+background:rgb(107, 120, 133) ;
+}
+@media all and (max-width:700px){
+.myP {
+    padding:2%;
+}
+}
+
+/* #endregion */
+
+
+/* #region Loader */
+.loader_bg{
+    position: fixed;
+    z-index: 9999999;
+    background: rgb(72, 85, 99);
+    width: 100%;
+    height: 100%;
+        }
+.loader{
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top:40%;
+    left:38%;
+
+    align-self: center;
+}
+.loader:before, 
+.loader:after{
+    content:'';
+    border: 1em solid #33ffaa;
+    border-radius:50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top:0;
+    left:0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform:scale(0);
+        opacity:0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform:scale(1);
+        opacity: 0;
+    }
+}
+
+
+/* #endregion */
+
+.mySlides {display:none;
+  box-shadow: 7px 7px 5px grey;
+  border-radius:25px;
+  animation:zoom-out 3s linear infinite;
+}
+@keyframes zoom-out{
+    100%{
+        width:90%;
+    }
+}
+.mySlides img{
+border-radius:25px;
+}
+
+.data{
+    width:300px;
+    height:430px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background:transparent;
+    border:2px solid black;
+    margin-left:40px;
+    margin-top:50px;
+    display:inline-block;
+box-shadow: 17px 17px 5px rgb(49, 47, 47);
+}
+
+
+.data img{
+    max-width: 295px;
+    max-height: 295px;
+    border-top-left-radius: 25px;
+    border-top-right-radius:25px;
+}
+.data h2{
+    align-content: center;
+    justify-content: center;
+    margin-left:30%;
+    color:white;
+    margin-top:0;
+    
+}
+.data p{
+    color:white;
+    font-size: large;
+    margin-left:10px;
+}
+</style>
+
+<body>
+
+  <div class="loader_bg">
+    <div class="loader">
+<img src="log.png" style="width:400px; margin-top:120px;margin-left:-130px;">
+    </div>
+</div>
+
+
+<div id="progressbar"></div>
+<div id="scrollPath"></div>
+<div id="progressbar2"></div>
+<div id="scrollPath2"></div>
+<div id="main">
+
+
+    
+  <nav class="nav">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html" style="font-family:'Courier New', Courier, monospace;">INVESTGROUP</a>
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="izolime.html">Izolime</a></li>
+                <li><a href="interier.html">Interier</a></li>
+                <li><a href="contact.html">Contact/Info</a></li>
+            </ul>
+        </div>
+        <span class="navTrigger">
+            <i></i>
+            <i></i> 
+            <i></i>
+        </span>
+    </div>
+</nav>
+
+<section class="home">
+</section>
+<div style="height: 1000px">
+
+
+
+ 
+    <center>
+        <h3 style="text-shadow: 0 0 7px rgb(134, 74, 158); color: rgb(255, 255, 255); padding-top: 24px;">Home</h3>
+       </center>
+
+
+
+    <center>
+<img src="logo1.jpg" style="max-height: 100%; width: auto; margin-top: 30px; border-radius: 30px;
+box-shadow: 12px 12px  5px grey; position:static; ">
+</center>
+
+
+
+<center>
+         
+    <div class="w3-content w3-section" style="max-width:700px;max-height:400px;margin-top:40px;margin-bottom:20px">
+        <img class="mySlides" src="in7.jpg" style="width:100%;height:400px">
+        <img class="mySlides" src="int2.jpg" style="width:100%;height:400px">
+        <img class="mySlides" src="in3.jpg" style="width:100%;height:400px;">
+        <img class="mySlides" src="int3.jpg" style="width:100%;height:400px;">
+      </div>
+    
+    </center>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+var i;
+var x = document.getElementsByClassName("mySlides");
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";  
+}
+myIndex++;
+if (myIndex > x.length) {myIndex = 1}    
+x[myIndex-1].style.display = "block";  
+setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+<br><br><br>
+<div class="info">
+  <h2>Informacione    </h2>
+
+ <p> <b style="color:rgb(255, 255, 255)">InvestGroup</b> eshte kompani e cila kryesisht funksionon ne qytetin e Kumanoves, Maqedoni e Veriut 
+  dhe ka pervoje shumevjecare.
+  <br>Merret me izolimin, renovimin, dekorimin e shtepive, banesave, zyreve dhe ambienteve tjera shtepiake apo te punes.
+  <br>Ka punuar shume vite ne qytetin e Kumanoves dhe rrethinen e saj, ku te gjithe klientet jane ndare te kenaqur nga puna saj.
+  <br>Posedojne te gjitha mjetet e nevojshme per pune, si veglat e punes si dhe skele personale.
+  <br>Materiali i punes blihet nga ne apo edhe nga vete pronari i objektit.
+  <br>Montimi i skeles ne cfaredo kushtesh dhe cfaredo vendi behet nga vet kompania jone.
+  <br>Izolimi i objektit, si izolimi i brendshem si ai i jashtem behet me standarde europiane.
+  <br>Dekorimi i eksterierit apo edhe interierit sipas deshires tuaj, ne cfaredo forme,
+  cfaredo dizajni, behet i mundshem me ne.
+  <br><p style="margin-left:40px;font-size: 18;color:rgb(255, 255, 255)"><b>Garantojme per cilesine e punes tone.</b></p>
+
+</p>
+</div>
+
+
+<div class="data">
+    <img src="i6.jpg">
+    <h2>Izolime</h2>
+   <p> Bejme izolimin e shtepive, zyreve tuaja dhe te ambienteve tjera te punes Izolimi behet me stiropor te cfaredo trashesie.
+    </p>
+</div>
+
+
+<div class="data">
+    <img src="in7.jpg">
+    <h2>Dekorime</h2>
+   <p>Bejme dekorimin e ambienteve tuaja shtepiake si dhe te punes.
+    Dekorimi behet me gips si dhe stiropor.
+    Forma apo dizajni i dekorimit sipas deshires tuaj.</p>
+</div>
+
+<div class="data">
+    <img src="i80.jpg">
+    <h2>Menaxhime</h2>
+   <p>Menaxhimi i punes ne ambientet tuaja nga ana jone.
+    Bejme menaxhimin e punes me qellim qe ajo te jete ne precizitetin me te larte te mundshem.
+ </p>
+</div>
+
+<div class="data">
+    <img src="in9.jpg">
+    <h2>Ngjyrosja</h2>
+   <p>Ngjyrosja e ambienteve tuaja me polikolor.
+    Ngjyra sipas deshires tuaj.</p>
+</div>
+
+<div class="data">
+    <img src="izolim1.jpg">
+    <h2>Fasadime</h2>
+   <p>Fasadimi i ambienteve tuaja me material te cfaredoshem.
+</p>
+</div>
+
+
+
+<br><br><br><br>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js">
+</script>
+<script type="text/javascript">
+const reveal = gsap.utils.toArray('.reveal');
+reveal.forEach((text,i) =>{
+    ScrollTrigger.create({
+        trigger:text,
+        toggleClass: 'active',
+        start:"top 90%",
+        end: "top 20%",
+        markers:true
+    })
+})
+</script>
+    <script>
+
+$('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+});
+
+
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 50) {
+            $('.nav').addClass('affix');
+            console.log("OK");
+        } else {
+            $('.nav').removeClass('affix');
+        }
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    setTimeout(function(){
+        $('.loader_bg').fadeToggle();
+    }, 1200);
+</script>
+
+
+  </div>
+  </div>
+
+
+</body>
+
+
+
+</html>
+
+
+
+
