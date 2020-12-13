@@ -15,19 +15,17 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
   />
 
-  <link rel="php" href="C:\Users\pc\Desktop\InvestGroup\inv\process.php" type="php">
-</head>
+  </head>
 <style>
-  
-
 body {
   margin: 0;
   background: linear-gradient(to right, rgb(72, 85, 99), rgb(41, 50, 60));
@@ -166,6 +164,7 @@ filter:blur(30px);
   transition: 0.5s;
   border-top-right-radius: 20%;
   border-top-left-radius:20%;
+  z-index: -1;
 }
 
 .box .imgBX{
@@ -178,6 +177,7 @@ filter:blur(30px);
   box-sizing: border-box;
   border-top-right-radius: 20%;
   border-top-left-radius:20%;
+  
 }
 .box .imgBX img{
   max-width: 100%;
@@ -304,6 +304,7 @@ height: 65px;
 position: fixed;
 line-height: 65px;
 text-align: center;
+z-index:9999999;
 }
 
 .nav div.logo {
@@ -312,6 +313,7 @@ width: auto;
 height: auto;
 padding-left: 3rem;
 margin-top: -10px;
+z-index:9999999;
 }
 
 .nav div.logo a {
@@ -657,20 +659,19 @@ background:rgb(107, 120, 133) ;
 /* #region Loader */
 .loader_bg{
     position: fixed;
-    z-index: 9999999;
+    z-index: 999999999;
     background: rgb(72, 85, 99);
     width: 100%;
     height: 100%;
+    align-content: center;
         }
 .loader{
     border: 0 solid transparent;
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    position: absolute;
-    top:40%;
-    left:38%;
-
+    position: relative;
+    top:45%;
     align-self: center;
 }
 .loader:before, 
@@ -707,7 +708,8 @@ background:rgb(107, 120, 133) ;
 /* #endregion */
 
 .mySlides {display:none;
-  box-shadow: 7px 7px 5px grey;
+
+    box-shadow: 17px 17px 5px rgb(49, 47, 47);
   border-radius:25px;
   animation:zoom-out 3s linear infinite;
 }
@@ -752,17 +754,81 @@ box-shadow: 17px 17px 5px rgb(49, 47, 47);
     color:white;
     font-size: large;
     margin-left:10px;
+    
 }
+ /* #region Slide */
+ .content1{
+        margin-left:42px;
+        margin-top:50px;
+        width:100px;
+        height:50px;
+        display:flex;
+        align-items: center;
+        justify-items: center;
+        
+    }
+
+    @media screen and (min-width:468px) {
+        .content1 {
+        margin-left:41%;
+        }
+    }
+    .slider-wrapper{
+        font-size:40px;
+        color:white;
+        font-weight: bold;
+        text-transform: uppercase;
+        display:flex;
+        align-items: center;
+        justify-content:center;
+    }
+    .slider{
+        height:50px;
+        padding-left:15px;
+        overflow: hidden;
+    }
+    .slider div{
+    color:#fff;
+    height:50px;
+    margin-bottom:50px;
+    padding:2px 15px;
+    text-align:center;       
+    box-sizing:border-box;
+    
+    align-items: center;
+    justify-items: center;
+    }
+    .slider-text1{
+        background:lightgreen;
+        animation: slide 4s linear infinite;
+    }
+    .slider-text2{
+        background:crimson;
+    }
+    .slider-text3{
+        background:rgb(162, 128, 240);
+    }
+    @keyframes slide{
+        0%{margin-top:-300px;}
+        5%{margin-top:-200px;}
+        33%{margin-top:-200px;}
+        38%{margin-top:-100px;}
+        66%{margin-top:-100;}
+        71%{margin-top:0px;}
+        100%{margin-top:0;}
+    }
+    /* #endregion */
+
 </style>
 
 <body>
-
+<center>
   <div class="loader_bg">
     <div class="loader">
-<img src="log.png" style="width:400px; margin-top:120px;margin-left:-130px;">
+
     </div>
 </div>
-
+</center>
 
 <div id="progressbar"></div>
 <div id="scrollPath"></div>
@@ -770,8 +836,6 @@ box-shadow: 17px 17px 5px rgb(49, 47, 47);
 <div id="scrollPath2"></div>
 <div id="main">
 
-
-    
   <nav class="nav">
     <div class="container">
         <div class="logo">
@@ -793,6 +857,7 @@ box-shadow: 17px 17px 5px rgb(49, 47, 47);
     </div>
 </nav>
 
+
 <section class="home">
 </section>
 <div style="height: 1000px">
@@ -803,42 +868,22 @@ box-shadow: 17px 17px 5px rgb(49, 47, 47);
     <center>
         <h3 style="text-shadow: 0 0 7px rgb(134, 74, 158); color: rgb(255, 255, 255); padding-top: 24px;">Home</h3>
        </center>
-
-
-
     <center>
 <img src="logo1.jpg" style="max-height: 100%; width: auto; margin-top: 30px; border-radius: 30px;
 box-shadow: 12px 12px  5px grey; position:static; ">
 </center>
 
+<div class="content1">
+    <div class="slider-wrapper">
+        <div class="slider">
+            <div class="slider-text1">Izolime</div>
+            <div class="slider-text2">Dekorime</div>
+            <div class="slider-text3">Ngjyrosje</div>
+        </div>
+    </div>
+</div>
 
 
-<center>
-         
-    <div class="w3-content w3-section" style="max-width:700px;max-height:400px;margin-top:40px;margin-bottom:20px">
-        <img class="mySlides" src="in7.jpg" style="width:100%;height:400px">
-        <img class="mySlides" src="int2.jpg" style="width:100%;height:400px">
-        <img class="mySlides" src="in3.jpg" style="width:100%;height:400px;">
-        <img class="mySlides" src="int3.jpg" style="width:100%;height:400px;">
-      </div>
-    
-    </center>
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-var i;
-var x = document.getElementsByClassName("mySlides");
-for (i = 0; i < x.length; i++) {
-x[i].style.display = "none";  
-}
-myIndex++;
-if (myIndex > x.length) {myIndex = 1}    
-x[myIndex-1].style.display = "block";  
-setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-</script>
 
 <br><br><br>
 <div class="info">
@@ -859,23 +904,27 @@ setTimeout(carousel, 2000); // Change image every 2 seconds
 </p>
 </div>
 
-
+<div data-aos="zoom out" style="display:inline-block;">
 <div class="data">
     <img src="i6.jpg">
     <h2>Izolime</h2>
    <p> Bejme izolimin e shtepive, zyreve tuaja dhe te ambienteve tjera te punes Izolimi behet me stiropor te cfaredo trashesie.
     </p>
 </div>
+</div>
 
-
+<div data-aos="zoom-in" style="display:inline-block;">
 <div class="data">
     <img src="in7.jpg">
     <h2>Dekorime</h2>
+    
    <p>Bejme dekorimin e ambienteve tuaja shtepiake si dhe te punes.
     Dekorimi behet me gips si dhe stiropor.
     Forma apo dizajni i dekorimit sipas deshires tuaj.</p>
 </div>
+</div>
 
+<div data-aos="zoom-out" style="display:inline-block;">
 <div class="data">
     <img src="i80.jpg">
     <h2>Menaxhime</h2>
@@ -883,26 +932,30 @@ setTimeout(carousel, 2000); // Change image every 2 seconds
     Bejme menaxhimin e punes me qellim qe ajo te jete ne precizitetin me te larte te mundshem.
  </p>
 </div>
+</div>
 
+<div data-aos="zoom-in" style="display:inline-block;">
 <div class="data">
     <img src="in9.jpg">
     <h2>Ngjyrosja</h2>
    <p>Ngjyrosja e ambienteve tuaja me polikolor.
     Ngjyra sipas deshires tuaj.</p>
 </div>
+</div>
 
+
+<div data-aos="zoom-out" style="display:inline-block;">
 <div class="data">
     <img src="izolim1.jpg">
     <h2>Fasadime</h2>
    <p>Fasadimi i ambienteve tuaja me material te cfaredoshem.
 </p>
 </div>
+</div>
 
 
 
 <br><br><br><br>
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js">
 </script>
@@ -919,16 +972,12 @@ reveal.forEach((text,i) =>{
 })
 </script>
     <script>
-
 $('.navTrigger').click(function () {
     $(this).toggleClass('active');
     console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
-
 });
-
-
     $(window).scroll(function() {
         if ($(document).scrollTop() > 50) {
             $('.nav').addClass('affix');
@@ -944,7 +993,9 @@ $('.navTrigger').click(function () {
         $('.loader_bg').fadeToggle();
     }, 1200);
 </script>
-
+<script>
+    AOS.init(3000);
+  </script>
 
   </div>
   </div>
