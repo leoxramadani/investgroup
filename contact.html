@@ -147,57 +147,6 @@ section{
 
 /* #endregion */
 
-/* #region Header */
-header{
-     margin: 5px;
-     font-size: 0;
-     display: -ms-flexbox;
-     -ms-flexbox-wrap: wrap;
-     -ms-flexbox-direction:column;
-     -webkit-flex-flow:row wrap;
-     flex-flow: row wrap;
-     display: -webkit-box;
-     display: flex;
-   }
-   header div{
-     -webkit-box-flex:auto;
-     -ms-flex:auto;
-     flex: auto;
-     width: 200px;
-     background: #706c6c;
-     margin: 10px;
-     border-radius: 20px;
-     transition: 0.1s;
-     margin-bottom:25px;
-     
- box-shadow: 7px 7px 5px grey;
-
-   }
-   header div img{
-     width: 100%;
-     height: 240px;
-     border-radius: 20px;
-     
-   }
-   header div:hover{
- border-top-color:#77ff00;
- border-left-color:#77ff80;
- border-right-color:#77ff80;
- border-bottom-color: #77fff0;
-   }
-   @media screen and (max-width: 500px){
-     header div{
-       margin: 5px;
-     }
-     header{
-       padding:0;
-
-     }
-   }
-
-/* #endregion */
-   
-
    
 /* #region nav2 */
 
@@ -591,7 +540,7 @@ background:rgb(107, 120, 133) ;
     display:inline-block;
     margin:20px;
     margin-top:50px;
-
+    z-index:-2;
     box-shadow: 10px 10px rgb(48, 47, 47);
 }
 .info h3{
@@ -614,21 +563,29 @@ background:rgb(107, 120, 133) ;
 /* #region border */
 .border{
     background:transparent;
-    width:270px;
-    border:2px solid rgb(162, 210, 255);
-    height:270px;
+    width:300px;
+    border:5px solid rgb(162, 210, 255);
+    height:300px;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
+    z-index:-1;
     position:absolute;
     display: inline-block;
     margin-top:30px;
     justify-content: center;
     align-items: center;
-    transform:rotate(-2deg);    
     border-bottom-color: rgb(154, 204, 252);
     border-right-color: rgb(142, 198, 250);
     border-top-color:rgb(120, 188, 252);
     border-right-color:rgb(93, 177, 255);
+    z-index:-1;
+    animation-name: example;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+
+100% { transform:rotate(10deg);    }
 }
 /* #endregion */ 
 
@@ -643,7 +600,7 @@ background:rgb(107, 120, 133) ;
                     border-radius: 25px;
                     position: absolute;
                     margin-top:45px;
-                    
+                    z-index:-1;
                 }
                 .acontent{
                     width: 185px;
@@ -734,7 +691,7 @@ background:rgb(107, 120, 133) ;
   border-width: 24px 24px 80px;
   background-color: black;
   margin-left:270px;
-
+z-index: -1;
 }
 
 /* The keyboard of the laptop */
@@ -799,7 +756,8 @@ background:rgb(107, 120, 133) ;
     <nav class="nav">
       <div class="container">
           <div class="logo">
-               <a href="index.html" style="font-family:'Courier New', Courier, monospace;">INVESTGROUP</a>
+               <a href="index.html" style="font-family:'Courier New', Courier, monospace;">INVESTGROUP </a>
+            
         
           </div>
           <div id="mainListDiv" class="main_list">
@@ -821,7 +779,15 @@ background:rgb(107, 120, 133) ;
   <section class="home">
   </section>
   <div style="height: 1000px">
-
+    <div class="content1">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <div class="slider-text1">Izolime</div>
+                <div class="slider-text2">Dekorime</div>
+                <div class="slider-text3">Ngjyrosje</div>
+            </div>
+        </div>
+    </div>
 
 
     
@@ -876,8 +842,7 @@ background:rgb(107, 120, 133) ;
     
     </center>
 
-
-
+    <div style="margin-top:150px;"></div>
     <script>
 
 $('.navTrigger').click(function () {
@@ -907,7 +872,7 @@ $('.navTrigger').click(function () {
         <div class="notch">
         </div>
         
-            <img src="art4.jpg">
+            <img src="art4.png">
       
             
     </div>
@@ -915,7 +880,7 @@ $('.navTrigger').click(function () {
         <div class="iphonecontent">
 
             <div class="iphonenotch"></div>
-            <img src="art1.jpg">
+            <img src="art1.png">
             </div>
     </div>
 
@@ -924,7 +889,7 @@ $('.navTrigger').click(function () {
 
 <div class="laptop">
     <div class="content">
-        <img src="art2.png">
+        <img src="art2.jpg">
         </div>
   </div>
 
